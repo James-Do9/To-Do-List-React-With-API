@@ -13,13 +13,14 @@ export class ToDoList extends React.Component {
 		if (e.keyCode == 13) {
 			let updatedTaskList = this.state.taskList; //Better to change the state through a local variable instead of doing it directly
 			updatedTaskList.push(this.state.task);
-			this.setState({ taskList: updatedTaskList });
+			this.setState({ taskList: updatedTaskList }); //Updates the taskList array with the newly inputed task by the user
 			let updatedCounter = this.state.taskCounter;
 			updatedCounter++;
-			this.setState({ taskCounter: updatedCounter });
+			this.setState({ taskCounter: updatedCounter }); //Increments the counter by +1 every time the user enters a task, the counter number is displayed
+			//on the bottom of the lists
 			let resetTask = this.state.task;
 			resetTask = "";
-			this.setState({ task: resetTask });
+			this.setState({ task: resetTask }); //Resets the task on the input bar so the user can freely type a new task without having to backspace or delete
 		}
 	};
 	removeList = index => {
