@@ -1,15 +1,18 @@
 @import "~bootstrap/scss/bootstrap.scss";
 body{
     background-color: rgb(243,239,240);
-    font-family:"Indie Flower"
+    
 }
 h1{
     text-align: center;
     color:rgb(235,216,217);
     font-size: 60px;
+    font-family:"Indie Flower";
+    text-decoration:underline;
 }
 input{
-    outline: 1px solid rgb(223,223,223)
+    outline: 1px solid rgb(223,223,223);
+    text-align:center;
 }
 input:focus{
     outline: 1px solid rgb(223,223,223);
@@ -30,4 +33,16 @@ input:focus{
         0 20px 0 -10px white,
         0 20px 1px -9px rgba(0,0,0,0.15);
     padding: 30px;
+}
+
+p{
+    margin: 30px 0px 10px 0px;
+    text-align: center;
+    color: rgb(235,216,217);
+    font-size:30px;
+}
+
+.listText{
+    font-weight:bold;
+    color: rgb(235,216,217);
 }

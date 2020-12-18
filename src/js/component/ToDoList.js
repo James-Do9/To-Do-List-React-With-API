@@ -34,7 +34,7 @@ export class ToDoList extends React.Component {
 	render() {
 		return (
 			<div>
-				<h1>To Do List</h1>
+				<h1>To Do List:</h1>
 				<div className="ToDoList">
 					<div className="list-group list-group-flush">
 						<input
@@ -53,14 +53,19 @@ export class ToDoList extends React.Component {
 					<ol className="list-group list-group-flush">
 						{this.state.taskList.map((content, index) => {
 							return (
-								<li className="list-group-item" key={index}>
+								<li
+									className="list-group-item listText"
+									key={index}>
 									{content}{" "}
 									<span
 										className="float-right"
 										onClick={index =>
 											this.removeList(index)
 										}>
-										<i className="fas fa-times" />
+										<i
+											className="fas fa-times"
+											style={{ color: "red " }}
+										/>
 									</span>
 								</li>
 							);
