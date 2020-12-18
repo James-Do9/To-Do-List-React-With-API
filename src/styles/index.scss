@@ -1,19 +1,19 @@
 @import "~bootstrap/scss/bootstrap.scss";
 body{
     background-color: rgb(243,239,240);
+    font-family:"Indie Flower"
 }
-.ToDo{
+h1{
     text-align: center;
+    color:rgb(235,216,217);
+    font-size: 60px;
 }
 input{
-    width: 50%;
     outline: 1px solid rgb(223,223,223)
 }
 input:focus{
     outline: 1px solid rgb(223,223,223);
 }
-
-
 .ToDoList{
     width: 50%;
     margin:auto;
@@ -21,14 +21,13 @@ input:focus{
     border-right: 1px solid rgb(223,223,223);
     background-color:white;
 }
-
 .paper {
     background: #fff;
     box-shadow:
         0 1px 1px rgba(0,0,0,0.15),
-        0 10px 0 -5px #eee,
+        0 10px 0 -5px white,
         0 10px 1px -4px rgba(0,0,0,0.15),
-        0 20px 0 -10px #eee,
+        0 20px 0 -10px white,
         0 20px 1px -9px rgba(0,0,0,0.15);
     padding: 30px;
 }

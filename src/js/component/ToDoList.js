@@ -5,7 +5,8 @@ export class ToDoList extends React.Component {
 		super();
 		this.state = {
 			taskList: [],
-			task: ""
+			task: "",
+			taskCounter: 0
 		};
 	}
 	addList = e => {
@@ -13,23 +14,39 @@ export class ToDoList extends React.Component {
 			let updatedTaskList = this.state.taskList; //Better to change the state through a local variable instead of doing it directly
 			updatedTaskList.push(this.state.task);
 			this.setState({ taskList: updatedTaskList });
+			let updatedCounter = this.state.taskCounter;
+			updatedCounter++;
+			this.setState({ taskCounter: updatedCounter });
+			let resetTask = this.state.task;
+			resetTask = "";
+			this.setState({ task: resetTask });
 		}
 	};
 	removeList = index => {
 		let updatedTaskList = this.state.taskList;
 		updatedTaskList.splice(index, 1);
 		this.setState({ taskList: updatedTaskList });
+		let updatedCounter = this.state.taskCounter;
+		updatedCounter--;
+		this.setState({ taskCounter: updatedCounter });
 	};
 	render() {
 		return (
 			<div>
-				<div className="ToDo">
-					<input
-						onChange={e => this.setState({ task: e.target.value })}
-						value={this.state.task}
-						type="text"
-						onKeyUp={e => this.addList(e)}
-					/>
+				<h1>To Do List</h1>
+				<div className="ToDoList">
+					<div className="list-group list-group-flush">
+						<input
+							className="list-group-item"
+							onChange={e =>
+								this.setState({ task: e.target.value })
+							}
+							value={this.state.task}
+							type="text"
+							onKeyUp={e => this.addList(e)}
+							placeholder="What needs to be done?"
+						/>
+					</div>
 				</div>
 				<div className="ToDoList paper">
 					<ol className="list-group list-group-flush">
@@ -42,12 +59,13 @@ export class ToDoList extends React.Component {
 										onClick={index =>
 											this.removeList(index)
 										}>
-										<i class="fas fa-times" />
+										<i className="fas fa-times" />
 									</span>
 								</li>
 							);
 						})}
 					</ol>
+					<p>{this.state.taskCounter} task(s) remaining.</p>
 				</div>
 			</div>
 		);
